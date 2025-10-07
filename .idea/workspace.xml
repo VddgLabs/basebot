@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d4dc678-5a46-483c-8cc8-2b4e07e4f6d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/helper/telegram.js" beforeDir="false" afterPath="$PROJECT_DIR$/helper/telegram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759850456622</updated>
-      <workItem from="1759850457679" duration="8394000" />
+      <workItem from="1759850457679" duration="10299000" />
     </task>
     <servers />
   </component>
