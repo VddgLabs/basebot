@@ -25,6 +25,11 @@ app.post("/webhook", async (req, res) => {
     res.sendStatus(200);
 });
 
+
+app.get("/test", (req, res) => {
+    res.send("Hello").status(400);
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`🚀 BaseBot is running on port ${process.env.PORT}`);
     console.log(`Set webhook: https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/setWebhook?url=https://localhost/webhook`);
