@@ -28,7 +28,7 @@ app.post("/webhook", async (req, res) => {
 
 
 app.get("/test", (req, res) => {
-    res.send("Hello").status(400);
+    res.send("Hello 01").status(400);
 });
 
 app.listen(process.env.PORT, () => {
