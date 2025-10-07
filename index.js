@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const telegram = require('helper/telegram');
 
 const app = express();
 
@@ -15,11 +16,11 @@ app.post("/webhook", async (req, res) => {
     const text = msg.text?.trim();
 
     if (text === "/start") {
-        await sendMessage(chatId, "👋 Hello! I'm BaseBot. Type /help for help.");
+        await telegram.sendMessage(chatId, "👋 Hello! I'm BaseBot. Type /help for help.");
     } else if (text === "/help") {
-        await sendMessage(chatId, "📖 Commands:\n/start - Start\n/help - Help");
+        await telegram.sendMessage(chatId, "📖 Commands:\n/start - Start\n/help - Help");
     } else {
-        await sendMessage(chatId, "❓ I didn't recognize the command. You can type /help.");
+        await telegram.sendMessage(chatId, "❓ I didn't recognize the command. You can type /help.");
     }
 
     res.sendStatus(200);
