@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const telegram = require('helper/telegram');
+const telegram = require('./helper/telegram');
 
 const app = express();
 
