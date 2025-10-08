@@ -59,6 +59,12 @@ app.post("/webhook", async (req, res) => {
                     ]
                 }
             });
+        } else if (text === "🚀 Start") {
+            await telegram.sendMessage(chatId, "🚀 Starting...");
+        } else if (text === "ℹ️ Info") {
+            await telegram.sendMessage(chatId, "ℹ️ Info screen");
+        } else if (text === "❌ Cancel") {
+            await telegram.sendMessage(chatId, "❌ Cancelled.");
         } else {
             await telegram.sendMessage(chatId, "❓ I didn't recognize the command. You can type /help.");
             console.log(`I didn't recognize the command: ${text}`);
