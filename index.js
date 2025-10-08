@@ -47,6 +47,7 @@ app.post("/webhook", async (req, res) => {
             }});
     } else {
         await telegram.sendMessage(chatId, "❓ I didn't recognize the command. You can type /help.");
+        console.log(`I didn't recognize the command: ${msg}`);
     }
 
     res.sendStatus(200);
