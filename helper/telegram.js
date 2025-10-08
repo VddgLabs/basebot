@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-const TELEGRAM_API = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}`;
+const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}`;
 
 const sendMessage = async (chatId, text, options = {}) => {
-    return axios.post(`${TELEGRAM_API}/sendMessage`, {
+    return axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
         chat_id: chatId,
         text,
         ...options,
@@ -11,7 +11,7 @@ const sendMessage = async (chatId, text, options = {}) => {
 }
 
 const sendPhoto = (chatId, photoUrl, caption = "") => {
-    return axios.post(`${TELEGRAM_API}/sendPhoto`, {
+    return axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
         chat_id: chatId,
         photo: photoUrl,
         caption,
@@ -19,15 +19,23 @@ const sendPhoto = (chatId, photoUrl, caption = "") => {
 }
 
 const sendDocument = (chatId, fileUrl, caption = "") => {
-    return axios.post(`${TELEGRAM_API}/sendDocument`, {
+    return axios.post(`${TELEGRAM_API_URL}/sendDocument`, {
         chat_id: chatId,
         document: fileUrl,
         caption,
     });
 }
 
+const answerCallbackQuery = async (callbackQueryId, options = {}) => {
+    return axios.post(`${TELEGRAM_API_URL}/answerCallbackQuery`, {
+        callback_query_id: callbackQueryId,
+        ...options
+    });
+}
+
 module.exports = {
     sendMessage,
     sendPhoto,
-    sendDocument
+    sendDocument,
+    answerCallbackQuery
 }
